@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Ontdek Vietnam</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="hero hero-contact">
+
+        <div class="navigatiebalk">
+
+            <a href="index.html" class="logo">
+                Ontdek Vietnam
+            </a>
+
+            <nav aria-label="Hoofdnavigatie">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="galerij.html">Galerij</a></li>
+                    <li><a href="reisroutes.html">Reisroutes</a></li>
+                    <li>
+                        <a href="contact.html"
+                           aria-current="page">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="hero-inhoud">
+            <h1>Contact</h1>
+            <p>Heb je vragen? Neem contact met ons op.</p>
+        </div>
+
+    </header>
+
+    <main id="hoofdinhoud">
+
+        <!-- INTRODUCTIE -->
+
+        <section class="contact-intro">
+
+            <h2>Neem contact op</h2>
+
+            <p>
+                Heb je vragen over Vietnam, onze reisroutes
+                of bijzondere bestemmingen?
+                Vul het onderstaande contactformulier in.
+            </p>
+
+        </section>
+
+        <!-- FORMULIER EN KAART -->
+
+        <section class="contact-sectie"
+                 aria-label="Contactformulier en locatie">
+
+            <div class="contact-layout">
+
+                <!-- CONTACTFORMULIER -->
+
+                <div class="contact-formulier-blok">
+
+                    <h2>Stuur een bericht</h2>
+
+                    <form class="contact-formulier"
+                          action="https://jkorpela.fi/cgi-bin/echo.cgi"
+                          method="post"
+                          target="_blank">
+
+                        <div class="formulier-veld">
+                            <label for="naam">Naam *</label>
+
+                            <input type="text"
+                                   id="naam"
+                                   name="naam"
+                                   autocomplete="name"
+                                   placeholder="Jouw naam"
+                                   required>
+                        </div>
+
+                        <div class="formulier-veld">
+                            <label for="email">E-mailadres *</label>
+
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   autocomplete="email"
+                                   placeholder="naam@voorbeeld.nl"
+                                   required>
+                        </div>
+
+                        <div class="formulier-veld">
+                            <label for="telefoon">Telefoonnummer</label>
+
+                            <input type="tel"
+                                   id="telefoon"
+                                   name="telefoon"
+                                   autocomplete="tel"
+                                   placeholder="Optioneel">
+                        </div>
+
+                        <div class="formulier-veld">
+                            <label for="onderwerp">Onderwerp *</label>
+
+                            <select id="onderwerp"
+                                    name="onderwerp"
+                                    required>
+
+                                <option value="">
+                                    Kies een onderwerp
+                                </option>
+
+                                <option value="reisroutes">
+                                    Reisroutes
+                                </option>
+
+                                <option value="bestemmingen">
+                                    Bestemmingen
+                                </option>
+
+                                <option value="algemeen">
+                                    Algemene vraag
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <div class="formulier-veld">
+                            <label for="bericht">Bericht *</label>
+
+                            <textarea id="bericht"
+                                      name="bericht"
+                                      rows="6"
+                                      placeholder="Schrijf hier je bericht..."
+                                      required></textarea>
+                        </div>
+
+                        <p class="formulier-uitleg">
+                            * Verplichte velden.
+                            Dit is een testformulier.
+                            Gebruik alleen fictieve gegevens.
+                            Bij verzenden worden deze getoond
+                            via een externe testservice.
+                        </p>
+
+                        <button type="submit" class="knop">
+                            Test verzenden
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- GOOGLE MAPS -->
+
+                <div class="contact-kaart-blok">
+
+                    <h2>Vietnam op de kaart</h2>
+
+                    <p>
+                        Bekijk Hanoi, de hoofdstad van Vietnam,
+                        op de onderstaande kaart.
+                    </p>
+
+                    <iframe
+                        title="Google Maps kaart van Hanoi in Vietnam"
+                        src="https://maps.google.com/maps?q=Hanoi%2C%20Vietnam&amp;output=embed"
+                        width="600"
+                        height="450"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- VIDEO -->
+
+        <section class="contact-video">
+
+            <div class="contact-video-inhoud">
+
+                <h2>Ontdek Vietnam op video</h2>
+
+                <p>
+                    Bekijk deze reisvideo om een indruk te
+                    krijgen van de natuur, steden en cultuur
+                    van Vietnam.
+                </p>
+
+                <div class="video-container">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/rbNZbC2IqLs"
+                        title="Vietnam Travel Guide - Island Hopper TV"
+                        width="960"
+                        height="540"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <p class="video-bron">
+                    Video: Island Hopper TV -
+                    <a href="https://www.youtube.com/watch?v=rbNZbC2IqLs"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Bekijk op YouTube
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inhoud">
+
+            <div class="footer-over">
+                <h2>Ontdek Vietnam</h2>
+
+                <p>
+                    Ontdek de natuur, cultuur en bijzondere
+                    bestemmingen van Vietnam.
+                    Deze website is gemaakt als eindopdracht
+                    voor de module HTML5 en CSS.
+                </p>
+            </div>
+
+            <nav class="footer-navigatie"
+                 aria-label="Footernavigatie">
+
+                <h2>Pagina's</h2>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="galerij.html">Galerij</a></li>
+                    <li><a href="reisroutes.html">Reisroutes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+
+            <div class="footer-contact">
+                <h2>Contact</h2>
+
+                <address>Gemaakt door Diego</address>
+
+                <p>
+                    <a href="contact.html">
+                        Neem contact op
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-onder">
+            <p>
+                &copy; 2026 Ontdek Vietnam.
+                Alle rechten voorbehouden.
+            </p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

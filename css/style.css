@@ -1,0 +1,2120 @@
+
+/* =================================
+   1. GOOGLE FONTS
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
+/* =================================
+   2. CSS VARIABELEN
+================================= */
+
+:root {
+    --kleur-primair: #006d77;
+    --kleur-secundair: #83c5be;
+    --kleur-accent: #ffb703;
+    --kleur-achtergrond: #edf6f9;
+    --kleur-tekst: #222222;
+    --kleur-wit: #ffffff;
+    --kleur-donker: #003b42;
+    --max-breedte: 1440px;
+}
+
+
+/* =================================
+   3. ALGEMENE INSTELLINGEN
+================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    width: 100%;
+    max-width: var(--max-breedte);
+    margin-inline: auto;
+
+    background-color: var(--kleur-achtergrond);
+    color: var(--kleur-tekst);
+
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   4. TEKST EN LETTERTYPES
+================================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 64px);
+}
+
+h2 {
+    font-size: clamp(24px, 3vw, 36px);
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--kleur-accent);
+    outline-offset: 4px;
+}
+
+
+/* =================================
+   5. HEADER - BASIS
+================================= */
+
+.hero {
+    min-height: 400px;
+
+    background: linear-gradient(
+        120deg,
+        var(--kleur-donker),
+        var(--kleur-primair)
+    );
+
+    color: var(--kleur-wit);
+    padding: 30px;
+}
+
+.navigatiebalk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.hero-inhoud {
+    text-align: center;
+    margin: 80px auto 40px;
+}
+
+.hero-inhoud h1 {
+    margin-bottom: 10px;
+}
+
+.hero-inhoud p {
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+
+/* =================================
+   6. INTRODUCTIE
+================================= */
+
+.introductie {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 25px;
+    text-align: center;
+}
+
+
+/* =================================
+   7. FOOTER
+================================= */
+
+.site-footer {
+    background-color: var(--kleur-donker);
+    color: var(--kleur-wit);
+
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0 0 10px;
+}
+
+.site-footer address {
+    font-style: normal;
+}
+
+.site-footer a {
+    color: var(--kleur-accent);
+}
+
+
+/* =================================
+   8. HEADER MET ACHTERGRONDFOTO
+================================= */
+
+.hero {
+    min-height: 580px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    padding: 25px 30px 90px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 90%,
+        0 100%
+    );
+}
+
+/* Verschillende afbeeldingen per pagina */
+
+.hero-home {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../afbeeldingen/home.jpg");
+}
+
+.hero-galerij {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../afbeeldingen/galerij.jpg");
+}
+
+.hero-contact {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../afbeeldingen/contact.jpg");
+}
+
+.hero-reisroutes {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../afbeeldingen/reisroutes.jpg");
+}
+
+
+/* =================================
+   9. TRANSPARANTE NAVIGATIEBALK
+================================= */
+
+.navigatiebalk {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding: 15px 25px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.logo::before {
+    content: "V";
+
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background-color: var(--kleur-accent);
+    color: var(--kleur-donker);
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+/* Navigatiemenu */
+
+.menu {
+    align-items: center;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 10px 14px;
+
+    color: white;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Hover-effect */
+
+.menu a:hover {
+    background-color: rgba(255, 183, 3, 0.2);
+    color: var(--kleur-accent);
+}
+
+/* Actieve pagina */
+
+.menu a[aria-current="page"] {
+    background-color: var(--kleur-accent);
+    color: var(--kleur-donker);
+}
+
+
+/* =================================
+   10. TEKST OVER DE AFBEELDING
+================================= */
+
+.hero-inhoud {
+    align-self: center;
+    max-width: 900px;
+
+    margin: 0 auto;
+    padding: 20px;
+
+    text-align: center;
+}
+
+.hero-inhoud h1 {
+    margin: 0 0 15px;
+
+    color: white;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-inhoud p {
+    margin: 0;
+
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =================================
+   11. RESPONSIVE HEADER
+================================= */
+
+@media (max-width: 767px) {
+
+    .hero {
+        min-height: 520px;
+        padding: 16px 14px 80px;
+
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 94%,
+            0 100%
+        );
+    }
+
+    .navigatiebalk {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .menu a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .hero-inhoud {
+        padding: 15px;
+    }
+}
+
+
+/* =================================
+   12. VIJF INFORMATIEKAARTEN
+================================= */
+
+.hoogtepunten {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+
+    width: calc(100% - 40px);
+    max-width: 1240px;
+
+    /* Kaarten overlappen de header */
+    margin: -95px auto 0;
+}
+
+
+/* Individuele kaarten */
+
+.informatiekaart {
+    min-height: 190px;
+    padding: 22px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--kleur-wit);
+    color: var(--kleur-donker);
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Iconen */
+
+.informatiekaart .material-symbols-outlined {
+    font-size: 44px;
+    line-height: 1;
+    color: var(--kleur-primair);
+}
+
+
+/* Titels */
+
+.informatiekaart h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* Subtitels */
+
+.informatiekaart p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #51636a;
+}
+
+
+/* Hover-effect */
+
+.informatiekaart:hover {
+    background-color: var(--kleur-primair);
+    color: var(--kleur-wit);
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.informatiekaart:hover p,
+.informatiekaart:hover .material-symbols-outlined {
+    color: var(--kleur-wit);
+}
+
+
+/* Toegankelijkheid */
+
+.visueel-verborgen {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =================================
+   13. RESPONSIVE INFORMATIEKAARTEN
+================================= */
+
+/* Middelgrote schermen */
+
+@media (max-width: 1024px) {
+    .hoogtepunten {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: -70px;
+    }
+}
+
+/* Tablets en kleinere schermen */
+
+@media (max-width: 767px) {
+    .hoogtepunten {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: -55px;
+        gap: 12px;
+    }
+
+    .informatiekaart {
+        min-height: 165px;
+        padding: 18px 12px;
+    }
+
+    .informatiekaart h3 {
+        font-size: 17px;
+    }
+}
+
+/* Kleine mobiele schermen */
+
+@media (max-width: 480px) {
+    .hoogtepunten {
+        grid-template-columns: 1fr;
+        margin-top: -50px;
+    }
+
+    .informatiekaart {
+        min-height: 145px;
+    }
+}
+
+
+/* =================================
+   14. OVER VIETNAM SECTIE
+================================= */
+
+.over-vietnam {
+    background: linear-gradient(
+        to right,
+        var(--kleur-primair) 33.33%,
+        var(--kleur-achtergrond) 33.33%
+    );
+
+    padding: 90px 25px;
+}
+
+.over-vietnam-inhoud {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+
+    max-width: 1240px;
+    margin: 0 auto;
+
+    align-items: center;
+}
+
+/* Linkerkant */
+
+.over-vietnam-tekst {
+    color: white;
+}
+
+.over-vietnam-tekst h2 {
+    margin-top: 0;
+    color: white;
+}
+
+.over-vietnam-tekst p {
+    margin-bottom: 20px;
+}
+
+/* Knop */
+
+.knop {
+    display: inline-block;
+    padding: 12px 24px;
+
+    background-color: var(--kleur-accent);
+    color: var(--kleur-donker);
+
+    text-decoration: none;
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.knop:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+/* Rechterkant */
+
+.over-vietnam-afbeelding {
+    padding: 20px;
+}
+
+.over-vietnam-afbeelding h3 {
+    text-align: center;
+    color: var(--kleur-donker);
+}
+
+.over-vietnam-afbeelding figure {
+    margin: 0;
+}
+
+.over-vietnam-afbeelding img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.over-vietnam-afbeelding figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* =================================
+   15. RESPONSIVE OVER VIETNAM
+================================= */
+
+@media (max-width: 767px) {
+
+    .over-vietnam {
+        background: var(--kleur-achtergrond);
+        padding: 45px 15px;
+    }
+
+    .over-vietnam-inhoud {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .over-vietnam-tekst {
+        background-color: var(--kleur-primair);
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .over-vietnam-afbeelding {
+        padding: 15px 0;
+    }
+}
+
+
+/* =================================
+   16. DRIE BESTEMMINGEN
+================================= */
+
+.bestemmingen {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 70px 25px;
+}
+
+.bestemmingen > h2 {
+    text-align: center;
+    margin-bottom: 45px;
+    color: var(--kleur-donker);
+}
+
+/* Twee gelijke helften */
+
+.bestemming {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-bottom: 30px;
+    background-color: var(--kleur-wit);
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tekstgedeelte */
+
+.bestemming-tekst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 45px;
+}
+
+.bestemming-tekst h3 {
+    margin: 0 0 15px;
+    font-size: 28px;
+    color: var(--kleur-primair);
+}
+
+.bestemming-tekst p {
+    margin: 0 0 25px;
+    line-height: 1.8;
+}
+
+/* Afbeelding */
+
+.bestemming-afbeelding {
+    margin: 0;
+    min-height: 340px;
+}
+
+.bestemming-afbeelding img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* Omgekeerde indeling */
+
+.bestemming-omgekeerd .bestemming-tekst {
+    order: 2;
+}
+
+.bestemming-omgekeerd .bestemming-afbeelding {
+    order: 1;
+}
+
+/* =================================
+   17. RESPONSIVE BESTEMMINGEN
+================================= */
+
+@media (max-width: 767px) {
+
+    .bestemmingen {
+        padding: 45px 15px;
+    }
+
+    .bestemming {
+        grid-template-columns: 1fr;
+    }
+
+    .bestemming-tekst {
+        padding: 25px;
+    }
+
+    .bestemming-afbeelding {
+        min-height: 240px;
+    }
+
+    /* Op mobiel weer tekst boven foto */
+
+    .bestemming-omgekeerd .bestemming-tekst,
+    .bestemming-omgekeerd .bestemming-afbeelding {
+        order: 0;
+    }
+
+}
+
+
+/* =================================
+   18. REISTIPS SECTIE
+================================= */
+
+.reistips {
+    padding: 80px 25px;
+    background-color: var(--kleur-wit);
+}
+
+.reistips-inhoud {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reistips h2 {
+    text-align: center;
+    color: var(--kleur-donker);
+    margin-bottom: 20px;
+}
+
+.reistips-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Gestileerde lijst */
+
+.reistips-lijst {
+    padding-left: 35px;
+    margin: 0;
+}
+
+.reistips-lijst li {
+    background-color: var(--kleur-achtergrond);
+
+    padding: 20px 25px;
+    margin-bottom: 18px;
+
+    border-left: 4px solid var(--kleur-primair);
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Nummers van de lijst */
+
+.reistips-lijst li::marker {
+    color: var(--kleur-primair);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Titels */
+
+.reistips-lijst strong {
+    display: block;
+    font-size: 18px;
+    color: var(--kleur-donker);
+    margin-bottom: 8px;
+}
+
+/* Beschrijving */
+
+.reistips-lijst span {
+    display: block;
+    line-height: 1.7;
+}
+
+/* Hover */
+
+.reistips-lijst li:hover {
+    background-color: var(--kleur-secundair);
+    transform: translateX(5px);
+}
+
+
+/* =================================
+   19. RESPONSIVE REISTIPS
+================================= */
+
+@media (max-width: 767px) {
+
+    .reistips {
+        padding: 45px 15px;
+    }
+
+    .reistips-lijst {
+        padding-left: 25px;
+    }
+
+    .reistips-lijst li {
+        padding: 16px;
+    }
+
+    .reistips-lijst strong {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/* =================================
+   20. LAATSTE HOMEPAGE-SECTIE
+================================= */
+
+.reis-inspiratie {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: 80px 25px;
+
+    background-color: var(--kleur-secundair);
+}
+
+/* Diagonale achtergrond: ongeveer 2/3 en 1/3 */
+
+.reis-inspiratie::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-color: var(--kleur-donker);
+
+    clip-path: polygon(
+        0 0,
+        71% 0,
+        62% 100%,
+        0 100%
+    );
+}
+
+/* Inhoud boven de achtergrond */
+
+.reis-inspiratie-inhoud {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.reis-inspiratie h2 {
+    margin: 0 0 15px;
+    color: var(--kleur-wit);
+}
+
+.inspiratie-intro {
+    max-width: 550px;
+    margin-bottom: 40px;
+    color: var(--kleur-wit);
+}
+
+/* =================================
+   21. FOTOKAARTEN
+================================= */
+
+.inspiratie-kaarten {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.inspiratie-kaart {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--kleur-wit);
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Foto bovenaan */
+
+.inspiratie-kaart img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+/* Diagonale achtergrond onder foto */
+
+.inspiratie-tekst {
+    flex: 1;
+    padding: 25px;
+
+    background: linear-gradient(
+        135deg,
+        var(--kleur-primair) 68%,
+        var(--kleur-donker) 68%
+    );
+
+    color: var(--kleur-wit);
+}
+
+.inspiratie-tekst h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.inspiratie-tekst p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Links in de kaarten */
+
+.inspiratie-tekst a {
+    display: inline-block;
+    margin-top: 15px;
+
+    color: var(--kleur-wit);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.inspiratie-tekst a:hover {
+    color: var(--kleur-accent);
+}
+
+/* Hover-effect kaarten */
+
+.inspiratie-kaart:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* =================================
+   22. RESPONSIVE REISINSPIRATIE
+================================= */
+
+@media (max-width: 1023px) {
+
+    .inspiratie-kaarten {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .reis-inspiratie {
+        padding: 50px 15px;
+    }
+
+    .reis-inspiratie::before {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            75% 100%,
+            0 100%
+        );
+    }
+
+    .inspiratie-kaarten {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .inspiratie-tekst {
+        padding: 20px;
+    }
+
+    .inspiratie-tekst h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =================================
+   23. FOOTER VERBETEREN
+================================= */
+
+.site-footer {
+    padding: 0;
+    background-color: var(--kleur-donker);
+    color: var(--kleur-wit);
+    text-align: left;
+}
+
+/* Drie kolommen */
+
+.footer-inhoud {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 60px 25px;
+}
+
+/* Koppen */
+
+.site-footer h2 {
+    font-size: 20px;
+    margin: 0 0 20px;
+    color: var(--kleur-accent);
+}
+
+/* Algemene tekst */
+
+.footer-over p {
+    max-width: 400px;
+    line-height: 1.8;
+}
+
+/* Navigatie */
+
+.footer-navigatie ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-navigatie li {
+    margin-bottom: 12px;
+}
+
+.footer-navigatie a {
+    color: var(--kleur-wit);
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-navigatie a:hover {
+    color: var(--kleur-accent);
+}
+
+/* Contactinformatie */
+
+.footer-contact address {
+    font-style: normal;
+    margin-bottom: 15px;
+}
+
+.footer-contact a {
+    color: var(--kleur-accent);
+}
+
+/* Onderste gedeelte */
+
+.footer-onder {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-onder p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* =================================
+   24. RESPONSIVE FOOTER
+================================= */
+
+@media (max-width: 767px) {
+
+    .footer-inhoud {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 25px;
+    }
+
+    .footer-onder {
+        padding: 20px 15px;
+    }
+
+}
+
+
+/* =================================
+   25. GALERIJ INTRODUCTIE
+================================= */
+
+.galerij-intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 65px 25px 45px;
+
+    text-align: center;
+}
+
+.galerij-intro h2 {
+    color: var(--kleur-donker);
+    margin-bottom: 20px;
+}
+
+.galerij-intro p {
+    line-height: 1.8;
+}
+
+
+/* =================================
+   26. FOTOGALERIJ MET CSS GRID
+================================= */
+
+.fotogalerij {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 25px 90px;
+}
+
+.galerij-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 115px;
+
+    grid-auto-flow: dense;
+    gap: 12px;
+}
+
+
+/* =================================
+   27. AFBEELDINGSKAARTEN
+================================= */
+
+.galerij-kaart {
+    position: relative;
+
+    grid-row: span 2;
+
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background-color: var(--kleur-donker);
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Verschillende kaartafmetingen */
+
+.galerij-kaart--hoog {
+    grid-row: span 4;
+}
+
+.galerij-kaart--breed {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+
+/* Afbeeldingen */
+
+.galerij-kaart img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* =================================
+   28. OVERLAY MET TITEL EN SUBTITEL
+================================= */
+
+.galerij-kaart figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 50px 18px 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: var(--kleur-wit);
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0)
+    );
+}
+
+.galerij-kaart figcaption strong {
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.galerij-kaart figcaption span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   29. HOVER-EFFECTEN
+================================= */
+
+.galerij-kaart:hover img {
+    transform: scale(1.06);
+}
+
+.galerij-kaart:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =================================
+   30. RESPONSIVE GALERIJ
+================================= */
+
+/* Kleine laptops */
+
+@media (max-width: 1023px) {
+
+    .galerij-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 110px;
+    }
+
+}
+
+/* Tablets */
+
+@media (max-width: 767px) {
+
+    .galerij-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 110px;
+        gap: 10px;
+    }
+
+    .galerij-kaart--hoog {
+        grid-row: span 3;
+    }
+
+    .galerij-intro {
+        padding: 45px 20px 35px;
+    }
+
+    .fotogalerij {
+        padding: 0 15px 55px;
+    }
+
+    .galerij-kaart figcaption strong {
+        font-size: 17px;
+    }
+}
+
+/* Mobiele telefoons */
+
+@media (max-width: 480px) {
+
+    .galerij-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 240px;
+    }
+
+    .galerij-grid .galerij-kaart {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .galerij-kaart figcaption {
+        padding: 45px 16px 16px;
+    }
+
+}
+
+
+/* =================================
+   31. CONTACT INTRODUCTIE
+================================= */
+
+.contact-intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 65px 25px 45px;
+
+    text-align: center;
+}
+
+.contact-intro h2 {
+    color: var(--kleur-donker);
+}
+
+.contact-intro p {
+    line-height: 1.8;
+}
+
+
+/* =================================
+   32. CONTACT LAYOUT
+================================= */
+
+.contact-sectie {
+    padding: 20px 25px 80px;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.contact-formulier-blok,
+.contact-kaart-blok {
+    min-width: 0;
+    padding: 35px;
+
+    background-color: var(--kleur-wit);
+
+    border-radius: 15px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-layout h2 {
+    margin-top: 0;
+    font-size: 25px;
+    color: var(--kleur-donker);
+}
+
+
+/* =================================
+   33. FORMULIER
+================================= */
+
+.contact-formulier {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulier-veld {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formulier-veld label {
+    font-weight: 600;
+    color: var(--kleur-donker);
+}
+
+.formulier-veld input,
+.formulier-veld select,
+.formulier-veld textarea {
+    width: 100%;
+    padding: 13px 15px;
+
+    font: inherit;
+    font-size: 15px;
+    color: var(--kleur-tekst);
+
+    background-color: var(--kleur-wit);
+
+    border: 1px solid #b8c8cc;
+    border-radius: 8px;
+}
+
+/* Focus-effect */
+
+.formulier-veld input:focus,
+.formulier-veld select:focus,
+.formulier-veld textarea:focus {
+    outline: 2px solid var(--kleur-primair);
+    outline-offset: 2px;
+    border-color: var(--kleur-primair);
+}
+
+/* Berichtveld */
+
+.formulier-veld textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Uitleg */
+
+.formulier-uitleg {
+    margin: 0;
+    font-size: 13px;
+    color: #526168;
+}
+
+/* Verzendknop */
+
+.contact-formulier button {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+
+/* =================================
+   34. GOOGLE MAPS
+================================= */
+
+.contact-kaart-blok p {
+    margin-bottom: 25px;
+}
+
+.contact-kaart-blok iframe {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+
+    border: 0;
+    border-radius: 12px;
+}
+
+
+/* =================================
+   35. VIDEO SECTIE
+================================= */
+
+.contact-video {
+    padding: 75px 25px;
+
+    background-color: var(--kleur-wit);
+}
+
+.contact-video-inhoud {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-video h2 {
+    color: var(--kleur-donker);
+}
+
+.contact-video-inhoud > p {
+    max-width: 700px;
+    margin: 20px auto 35px;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+.contact-video .video-bron {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.video-bron a {
+    color: var(--kleur-primair);
+}
+
+
+/* =================================
+   36. RESPONSIVE CONTACTPAGINA
+================================= */
+
+@media (max-width: 900px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .contact-intro {
+        padding: 45px 20px 30px;
+    }
+
+    .contact-sectie {
+        padding: 10px 15px 50px;
+    }
+
+    .contact-formulier-blok,
+    .contact-kaart-blok {
+        padding: 22px;
+    }
+
+    .contact-video {
+        padding: 50px 15px;
+    }
+
+}
+
+
+
+/* =================================
+   37. REISROUTES INTRODUCTIE
+================================= */
+
+.routes-intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 65px 25px 45px;
+
+    text-align: center;
+}
+
+.routes-intro h2 {
+    color: var(--kleur-donker);
+}
+
+.routes-intro p {
+    line-height: 1.8;
+}
+
+
+/* =================================
+   38. REISROUTE KAARTEN
+================================= */
+
+.routes-overzicht {
+    padding: 30px 25px 80px;
+}
+
+.routes-container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.routes-container > h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--kleur-donker);
+}
+
+.route-kaarten {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.route-kaart {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    background-color: var(--kleur-wit);
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.3s ease;
+}
+
+.route-kaart:hover {
+    transform: translateY(-6px);
+}
+
+/* Afbeeldingen */
+
+.route-kaart > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+/* Tekstgedeelte */
+
+.route-inhoud {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 25px;
+}
+
+.route-inhoud h3 {
+    margin: 0 0 10px;
+    color: var(--kleur-primair);
+}
+
+.route-duur {
+    font-weight: 700;
+    color: var(--kleur-donker);
+}
+
+.route-inhoud h4 {
+    margin-bottom: 5px;
+}
+
+.route-inhoud ol {
+    padding-left: 22px;
+    margin-bottom: 25px;
+}
+
+.route-inhoud li {
+    margin-bottom: 8px;
+}
+
+.route-inhoud .knop {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+
+/* =================================
+   39. REISPLANNING TABEL
+================================= */
+
+.reisplanning {
+    padding: 75px 25px;
+    background-color: var(--kleur-wit);
+}
+
+.reisplanning-inhoud {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reisplanning h2 {
+    text-align: center;
+    color: var(--kleur-donker);
+}
+
+.reisplanning-inhoud > p {
+    max-width: 750px;
+    margin: 20px auto 35px;
+    text-align: center;
+}
+
+/* Horizontaal scrollen op kleine schermen */
+
+.tabel-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Tabelopmaak */
+
+.reisplanning table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.reisplanning caption {
+    padding: 15px;
+    font-weight: 700;
+    color: var(--kleur-donker);
+}
+
+.reisplanning th,
+.reisplanning td {
+    padding: 17px;
+    border: 1px solid #d5e0e3;
+}
+
+.reisplanning thead {
+    background-color: var(--kleur-primair);
+    color: var(--kleur-wit);
+}
+
+.reisplanning tbody tr:nth-child(even) {
+    background-color: var(--kleur-achtergrond);
+}
+
+.reisplanning tbody tr:hover {
+    background-color: var(--kleur-secundair);
+}
+
+
+/* =================================
+   40. VEELGESTELDE VRAGEN
+================================= */
+
+.routes-faq {
+    padding: 80px 25px;
+    background-color: var(--kleur-achtergrond);
+}
+
+.faq-inhoud {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.faq-inhoud > h2,
+.faq-inhoud > p {
+    text-align: center;
+}
+
+.faq-inhoud h2 {
+    color: var(--kleur-donker);
+}
+
+.faq-inhoud > p {
+    margin-bottom: 35px;
+}
+
+/* Uitklapbare vragen */
+
+.faq-inhoud details {
+    margin-bottom: 15px;
+
+    background-color: var(--kleur-wit);
+
+    border-radius: 10px;
+    border: 1px solid #d5e0e3;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.faq-inhoud summary {
+    padding: 20px;
+
+    font-weight: 700;
+    color: var(--kleur-donker);
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.faq-inhoud summary:hover {
+    background-color: var(--kleur-secundair);
+}
+
+.faq-inhoud summary:focus-visible {
+    outline: 3px solid var(--kleur-accent);
+    outline-offset: -3px;
+}
+
+.faq-inhoud details[open] summary {
+    background-color: var(--kleur-secundair);
+}
+
+.faq-inhoud details p {
+    padding: 5px 20px 20px;
+    margin: 0;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   41. RESPONSIVE REISROUTES
+================================= */
+
+@media (max-width: 1023px) {
+
+    .route-kaarten {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .routes-intro {
+        padding: 45px 20px 30px;
+    }
+
+    .routes-overzicht {
+        padding: 25px 15px 50px;
+    }
+
+    .route-kaarten {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .route-inhoud {
+        padding: 22px;
+    }
+
+    .reisplanning {
+        padding: 50px 15px;
+    }
+
+    .routes-faq {
+        padding: 50px 15px;
+    }
+
+    .faq-inhoud summary {
+        padding: 16px;
+    }
+
+}
+
+
+/* =================================
+   42. EXTRA RESPONSIVE INSTELLINGEN
+================================= */
+
+/* Voorkom dat grote inhoud de pagina oprekt */
+
+body {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+header,
+main,
+footer {
+    min-width: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =================================
+   43. RESPONSIVE HEADERAFBEELDINGEN
+================================= */
+
+/* Afbeeldingen voor verschillende schermen */
+
+.hero-home {
+    --foto-mobiel: url("../afbeeldingen/home-mobiel.jpg");
+    --foto-tablet: url("../afbeeldingen/home-tablet.jpg");
+}
+
+.hero-galerij {
+    --foto-mobiel: url("../afbeeldingen/galerij-mobiel.jpg");
+    --foto-tablet: url("../afbeeldingen/galerij-tablet.jpg");
+}
+
+.hero-contact {
+    --foto-mobiel: url("../afbeeldingen/contact-mobiel.jpg");
+    --foto-tablet: url("../afbeeldingen/contact-tablet.jpg");
+}
+
+.hero-reisroutes {
+    --foto-mobiel: url("../afbeeldingen/reisroutes-mobiel.jpg");
+    --foto-tablet: url("../afbeeldingen/reisroutes-tablet.jpg");
+}
+
+
+/* Tablets */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .hero {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.35),
+                rgba(0, 0, 0, 0.55)
+            ),
+            var(--foto-tablet);
+    }
+
+}
+
+
+/* Mobiele telefoons */
+
+@media (max-width: 767px) {
+
+    .hero {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.35),
+                rgba(0, 0, 0, 0.55)
+            ),
+            var(--foto-mobiel);
+    }
+
+}
+
+
+/* =================================
+   44. NAVIGATIE OP TABLETS
+================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+    .navigatiebalk {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu {
+        gap: 3px;
+    }
+
+    .menu a {
+        padding: 8px 9px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* =================================
+   45. NAVIGATIE OP KLEINE MOBIELEN
+================================= */
+
+@media (max-width: 480px) {
+
+    .navigatiebalk {
+        padding: 12px 10px;
+    }
+
+    .navigatiebalk nav {
+        width: 100%;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px 6px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .hero-inhoud h1 {
+        font-size: clamp(29px, 9vw, 40px);
+    }
+
+}
+
+
+/* =================================
+   46. RESPONSIVE OVER VIETNAM SECTIE
+================================= */
+
+/* Tekst passend binnen het donkere vlak */
+
+.over-vietnam-inhoud {
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 2.05fr);
+}
+
+
+/* Op kleinere schermen onder elkaar */
+
+@media (max-width: 900px) {
+
+    .over-vietnam {
+        background: var(--kleur-achtergrond);
+        padding: 45px 15px;
+    }
+
+    .over-vietnam-inhoud {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .over-vietnam-tekst {
+        background-color: var(--kleur-primair);
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .over-vietnam-afbeelding {
+        padding: 15px 0;
+    }
+
+}
+
+
+/* =================================
+   47. TOEGANKELIJKE ANIMATIES
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
